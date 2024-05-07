@@ -86,4 +86,6 @@ void sleep_for(int milisecond) {
 void clear_console() {
 	system("cls");
 }
-fdasfsaf
+
+
+dfjdklfj;a
