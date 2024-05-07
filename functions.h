@@ -14,3 +14,4 @@ void checkstate(Cell** my_grid, int size);
 void displaygrid(Cell** my_grid, int size);
 void sleep_for(int milisecond);
 void clear_console();
+dfafdfa
