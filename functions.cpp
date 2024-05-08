@@ -27,15 +27,15 @@ Cell** makegrid(int size) {
 }
 
 void checkstate(Cell** my_grid, int size) {
-	int alive_count = 0;
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
+			int alive_count = 0;
 			//up
-			if (my_grid[((i + size + 1) % size)][j].current_state == alive) {
+			if (my_grid[((i + size - 1) % size)][j].current_state == alive) {
 				alive_count++;
 			}
 			//down
-			if (my_grid[((i - size + 1) % size)][j].current_state == alive) {
+			if (my_grid[((i + size + 1) % size)][j].current_state == alive) {
 				alive_count++;
 			}
 			//right
@@ -47,19 +47,19 @@ void checkstate(Cell** my_grid, int size) {
 				alive_count++;
 			}
 			//upright
-			if (my_grid[((i + size + 1) % size)][((j + size + 1) % size)].current_state == alive) {
+			if (my_grid[((i + size - 1) % size)][((j + size + 1) % size)].current_state == alive) {
 				alive_count++;
 			}
 			//upleft
-			if (my_grid[((i + size + 1) % size)][((j - size + 1) % size)].current_state == alive) {
+			if (my_grid[((i + size - 1) % size)][((j + size - 1) % size)].current_state == alive) {
 				alive_count++;
 			}
 			//downright
-			if (my_grid[((i - size + 1) % size)][((j + size + 1) % size)].current_state == alive) {
+			if (my_grid[((i + size + 1) % size)][((j + size + 1) % size)].current_state == alive) {
 				alive_count++;
 			}
 			//downleft
-			if (my_grid[((i - size + 1) % size)][((j - size + 1) % size)].current_state == alive) {
+			if (my_grid[((i + size + 1) % size)][((j + size - 1) % size)].current_state == alive) {
 				alive_count++;
 			}
 
