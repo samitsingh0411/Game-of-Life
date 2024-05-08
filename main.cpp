@@ -1,13 +1,12 @@
 #include "functions.h"
 
 int main() {
-	int gridsize = 5;
+	int gridsize = 40;
 	Cell** cellgrid = makegrid(gridsize);
 	while (true) {
 		checkstate(cellgrid, gridsize);
 		displaygrid(cellgrid, gridsize);
-		sleep_for(400);
+		sleep_for(700);
 		clear_console();
-		sleep_for(400);
 	}
 }
