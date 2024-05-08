@@ -3,7 +3,7 @@
 #include <chrono>
 #include <stdlib.h>
 
-enum state { dead, alive };
+enum state { dead, alive, };
 
 class Cell {
 public:
@@ -97,7 +97,7 @@ void displaygrid(Cell** my_grid, int size) {
 		for (int j = 0; j < size; j++) {
 			my_grid[i][j].current_state = my_grid[i][j].buffer_state;
 			if (my_grid[i][j].current_state == alive) {
-				std::cout << "* ";
+				std::cout << "+ ";
 			}
 
 			else {

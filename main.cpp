@@ -1,7 +1,7 @@
 #include "functions.h"
 
 int main() {
-	int gridsize = 50;
+	int gridsize = 78;
 	Cell** cellgrid = makegrid(gridsize);
 
 	cellgrid[4][4].buffer_state = state::alive;
@@ -14,12 +14,11 @@ int main() {
 	cellgrid[6][4].current_state = state::alive;
 	//cellgrid[2][2].current_state = state::alive;
 
-	sleep_for(2000);
 
 	while (true) {
 		displaygrid(cellgrid, gridsize);
 		checkstate(cellgrid, gridsize);
-		sleep_for(200);
+		sleep_for(100);
 		clear_console();
 	}
 }
