@@ -1,7 +1,7 @@
 #include "functions.h"
 
 int main() {
-	int gridsize = 10;
+	int gridsize = 5;
 	Cell** cellgrid = makegrid(gridsize);
 	while (true) {
 		checkstate(cellgrid, gridsize);
@@ -11,4 +11,3 @@ int main() {
 		sleep_for(400);
 	}
 }
-dfasfjaslkfa
