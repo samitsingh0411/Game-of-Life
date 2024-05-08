@@ -1,5 +1,6 @@
 #pragma once
-enum state;
+
+enum class state {dead, alive};
 
 class Cell {
 public:

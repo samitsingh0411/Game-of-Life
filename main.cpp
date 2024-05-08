@@ -1,12 +1,25 @@
 #include "functions.h"
 
 int main() {
-	int gridsize = 10;
+	int gridsize = 50;
 	Cell** cellgrid = makegrid(gridsize);
+
+	cellgrid[4][4].buffer_state = state::alive;
+	//cellgrid[5][4].buffer_state = state::alive;
+	cellgrid[6][4].buffer_state = state::alive;
+	//cellgrid[2][2].buffer_state = state::alive;
+
+	cellgrid[4][4].current_state = state::alive;
+	//cellgrid[5][4].current_state = state::alive;
+	cellgrid[6][4].current_state = state::alive;
+	//cellgrid[2][2].current_state = state::alive;
+
+	sleep_for(2000);
+
 	while (true) {
-		checkstate(cellgrid, gridsize);
 		displaygrid(cellgrid, gridsize);
-		sleep_for(5000);
+		checkstate(cellgrid, gridsize);
+		sleep_for(200);
 		clear_console();
 	}
 }

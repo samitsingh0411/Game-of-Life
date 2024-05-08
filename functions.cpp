@@ -13,6 +13,7 @@ public:
 	Cell() {
 		int temp = rand() % 2;
 		current_state = (temp) ? dead : alive;
+		//current_state = dead;
 		buffer_state = current_state;
 	}
 };
@@ -22,7 +23,6 @@ Cell** makegrid(int size) {
 	for (int i = 0; i < size; i++) {
 		my_grid[i] = new Cell[size];
 	}
-
 	return my_grid;
 }
 
@@ -63,12 +63,28 @@ void checkstate(Cell** my_grid, int size) {
 				alive_count++;
 			}
 
-			if (alive_count < 2 or alive_count > 3) {
-				my_grid[i][j].buffer_state = dead;
+
+			//state checks  
+
+			if (my_grid[i][j].current_state == alive) {
+				if (alive_count < 2 or alive_count > 3) {
+					my_grid[i][j].buffer_state = dead;
+				}
+
+				else {
+					my_grid[i][j].buffer_state = alive;
+				}
 			}
 
-			else if (alive_count == 2 or alive_count == 3) {
-				my_grid[i][j].buffer_state = alive;
+			if (my_grid[i][j].current_state == dead) {
+				if (alive_count == 3) {
+					my_grid[i][j].buffer_state = alive;
+				}
+
+				else {
+					my_grid[i][j].buffer_state = dead;
+				}
+
 			}
 		}
 
